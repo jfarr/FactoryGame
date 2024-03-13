@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6e4onbmc7pvb"]
+
+[ext_resource type="Script" path="res://scenes/zooming_camera_2d.gd" id="1_ap43c"]
+
+[node name="ZomingCamera2D" type="Camera2D"]
+script = ExtResource("1_ap43c")

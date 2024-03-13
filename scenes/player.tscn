@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf0nxha1wdykv"]
 
-[ext_resource type="PackedScene" uid="uid://c6e4onbmc7pvb" path="res://scenes/zoming_camera_2d.tscn" id="1_2lguu"]
+[ext_resource type="PackedScene" uid="uid://c6e4onbmc7pvb" path="res://scenes/zooming_camera_2d.tscn" id="1_2lguu"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_25o03"]
 
 [node name="Player" type="CharacterBody2D"]

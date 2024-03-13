@@ -2,7 +2,7 @@ class_name ZoomingCamera2D
 extends Camera2D
 
 # Lower cap for the `_zoom_level`.
-@export var min_zoom := 1.0
+@export var min_zoom := 0.7
 # Upper cap for the `_zoom_level`.
 @export var max_zoom := 2.0
 # Controls how much we increase or decrease the `_zoom_level` on every turn of the scroll wheel.
