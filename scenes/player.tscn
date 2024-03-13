@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf0nxha1wdykv"]
+[gd_scene load_steps=4 format=3 uid="uid://cf0nxha1wdykv"]
 
 [ext_resource type="PackedScene" uid="uid://c6e4onbmc7pvb" path="res://scenes/zooming_camera_2d.tscn" id="1_2lguu"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_25o03"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nk8cr"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_25o03")
 
-[node name="ZomingCamera2D" parent="." instance=ExtResource("1_2lguu")]
+[node name="ZoomingCamera2D" parent="." instance=ExtResource("1_2lguu")]
+limit_left = -320
+limit_top = -275
+limit_right = 1475
+limit_bottom = 915
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nk8cr")

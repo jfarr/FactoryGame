@@ -12,7 +12,7 @@ extends Camera2D
 
 # The camera's target zoom level.
 var _zoom_level = 1.0
-
+			  
 func _set_zoom_level(value: float) -> void:
 	_zoom_level = clamp(value, min_zoom, max_zoom)
 	var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_SINE)
