@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdqlw8jh2373v"]
+[gd_scene load_steps=13 format=3 uid="uid://cdqlw8jh2373v"]
 
 [ext_resource type="Script" path="res://scenes/game_world.gd" id="1_6308v"]
 [ext_resource type="Texture2D" uid="uid://hmbu27iucjek" path="res://assets/tiles/ore.png" id="2_8gri3"]
 [ext_resource type="Texture2D" uid="uid://dpbmc0iru5osy" path="res://assets/tiles/survivalgame-terrian-defult.png" id="2_rcjjh"]
 [ext_resource type="Texture2D" uid="uid://cdlhi5cewd6bc" path="res://assets/tiles/survivalgame-terrian-cliffs.png" id="3_hyqe6"]
 [ext_resource type="Texture2D" uid="uid://di2u48ofpseul" path="res://assets/tiles/survivalgame-terrian-water.png" id="4_7jetv"]
+[ext_resource type="PackedScene" uid="uid://cf0nxha1wdykv" path="res://scenes/player.tscn" id="6_rfpdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm1l8"]
 texture = ExtResource("2_8gri3")
@@ -340,5 +341,5 @@ layer_1/name = "water"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458760, 458754, 0, 458762, 524290, 0, 458761, 524290, 0, 458764, 524290, 0, 458763, 524290, 0, 458765, 524290, 0, 458766, 524290, 0, 524296, 458754, 1, 589832, 458754, 1, 655368, 458754, 2, 655369, 524290, 2, 655370, 524290, 2, 655371, 524290, 2, 655372, 524290, 2, 655373, 524290, 2, 655374, 589826, 2, 589838, 589826, 1, 524302, 720898, 1, 524303, 524290, 2, 524304, 589826, 2, 458768, 589826, 0, 458767, 524290, 0, 524297, 786434, 0, 589833, 786434, 2, 524301, 917506, 0, 589837, 917506, 2, 589836, 851970, 2, 589835, 851970, 2, 589834, 851970, 2, 524298, 851970, 0, 524299, 851970, 0, 524300, 851970, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(576, 324)
+[node name="Player" parent="." instance=ExtResource("6_rfpdh")]
+position = Vector2(590, 351)
