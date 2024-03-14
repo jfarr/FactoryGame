@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdqlw8jh2373v"]
+[gd_scene load_steps=16 format=3 uid="uid://cdqlw8jh2373v"]
 
 [ext_resource type="Script" path="res://scenes/game_world.gd" id="1_6308v"]
 [ext_resource type="Texture2D" uid="uid://hmbu27iucjek" path="res://assets/tiles/ore.png" id="2_8gri3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdlhi5cewd6bc" path="res://assets/tiles/survivalgame-terrian-cliffs.png" id="3_hyqe6"]
 [ext_resource type="Texture2D" uid="uid://di2u48ofpseul" path="res://assets/tiles/survivalgame-terrian-water.png" id="4_7jetv"]
 [ext_resource type="PackedScene" uid="uid://cf0nxha1wdykv" path="res://scenes/player.tscn" id="6_rfpdh"]
+[ext_resource type="PackedScene" uid="uid://d733kbovq08e" path="res://scenes/miner.tscn" id="7_k0irq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm1l8"]
 texture = ExtResource("2_8gri3")
@@ -350,20 +351,24 @@ layer_1/tile_data = PackedInt32Array(458760, 458754, 0, 458762, 524290, 0, 45876
 [node name="Player" parent="." instance=ExtResource("6_rfpdh")]
 position = Vector2(590, 351)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Bounds" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(-333, 291)
 shape = SubResource("RectangleShape2D_b0yya")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(1491, 305)
 shape = SubResource("RectangleShape2D_b0yya")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(590, -291)
 shape = SubResource("RectangleShape2D_x2f25")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(575, 932)
 shape = SubResource("RectangleShape2D_x2f25")
+
+[node name="Miner" parent="." instance=ExtResource("7_k0irq")]
+position = Vector2(759, 180)
