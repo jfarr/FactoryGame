@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://detli30qtexs3" path="res://assets/sprites/blue_circle.svg" id="3_7ukyo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5nj3b"]
-radius = 120.0
+radius = 102.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0hvh"]
 size = Vector2(32, 32)
@@ -22,7 +22,7 @@ texture = ExtResource("2_hsixg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollectionArea"]
 self_modulate = Color(1, 1, 1, 0.54902)
-scale = Vector2(1.85, 1.85)
+scale = Vector2(1.6, 1.6)
 texture = ExtResource("3_7ukyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionArea"]
@@ -33,5 +33,7 @@ shape = SubResource("CircleShape2D_5nj3b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
 shape = SubResource("RectangleShape2D_t0hvh")
 
+[connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]
+[connection signal="body_exited" from="CollectionArea" to="." method="_on_collection_area_body_exited"]
 [connection signal="mouse_entered" from="ClickableArea" to="." method="_on_clickable_area_mouse_entered"]
 [connection signal="mouse_exited" from="ClickableArea" to="." method="_on_clickable_area_mouse_exited"]
