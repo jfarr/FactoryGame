@@ -33,7 +33,12 @@ shape = SubResource("CircleShape2D_5nj3b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
 shape = SubResource("RectangleShape2D_t0hvh")
 
+[node name="CollectionTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]
 [connection signal="body_exited" from="CollectionArea" to="." method="_on_collection_area_body_exited"]
 [connection signal="mouse_entered" from="ClickableArea" to="." method="_on_clickable_area_mouse_entered"]
 [connection signal="mouse_exited" from="ClickableArea" to="." method="_on_clickable_area_mouse_exited"]
+[connection signal="timeout" from="CollectionTimer" to="." method="_on_collection_timer_timeout"]
