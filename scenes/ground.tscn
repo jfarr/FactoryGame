@@ -1,129 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdqlw8jh2373v"]
+[gd_scene load_steps=8 format=3 uid="uid://be0vmb20ux268"]
 
-[ext_resource type="Script" path="res://scenes/game_world.gd" id="1_6308v"]
-[ext_resource type="Texture2D" uid="uid://hmbu27iucjek" path="res://assets/ore.png" id="2_8gri3"]
-[ext_resource type="Texture2D" uid="uid://dpbmc0iru5osy" path="res://assets/tiles/survivalgame-terrian-defult.png" id="2_rcjjh"]
-[ext_resource type="Texture2D" uid="uid://cdlhi5cewd6bc" path="res://assets/tiles/survivalgame-terrian-cliffs.png" id="3_hyqe6"]
-[ext_resource type="Texture2D" uid="uid://di2u48ofpseul" path="res://assets/tiles/survivalgame-terrian-water.png" id="4_7jetv"]
-[ext_resource type="PackedScene" uid="uid://cf0nxha1wdykv" path="res://scenes/player.tscn" id="6_rfpdh"]
-[ext_resource type="PackedScene" uid="uid://d733kbovq08e" path="res://scenes/miner.tscn" id="7_k0irq"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jm1l8"]
-texture = ExtResource("2_8gri3")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/custom_data_0 = "coal"
-1:0/0 = 0
-1:0/0/custom_data_0 = "copper"
-2:0/0 = 0
-2:0/0/custom_data_0 = "iron"
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-7:0/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-0:13/0 = 0
-1:13/0 = 0
-2:13/0 = 0
-3:13/0 = 0
-4:13/0 = 0
-5:13/0 = 0
-6:13/0 = 0
-7:13/0 = 0
-0:14/0 = 0
-1:14/0 = 0
-2:14/0 = 0
-3:14/0 = 0
-4:14/0 = 0
-5:14/0 = 0
-6:14/0 = 0
-7:14/0 = 0
-0:15/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_iav61"]
-tile_size = Vector2i(32, 32)
-custom_data_layer_0/name = "mineral"
-custom_data_layer_0/type = 4
-sources/1 = SubResource("TileSetAtlasSource_jm1l8")
+[ext_resource type="Texture2D" uid="uid://bynsap41c5rmp" path="res://assets/tiles/survivalgame-terrian-defult.png" id="1_ete5w"]
+[ext_resource type="Texture2D" uid="uid://mu70sl1ypuun" path="res://assets/tiles/survivalgame-terrian-cliffs.png" id="2_xwhmi"]
+[ext_resource type="Texture2D" uid="uid://d343ony7va5ej" path="res://assets/tiles/survivalgame-terrian-water.png" id="3_6i06i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hm6a"]
-texture = ExtResource("2_rcjjh")
+texture = ExtResource("1_ete5w")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 1:0/0 = 0
@@ -208,7 +90,7 @@ texture_region_size = Vector2i(40, 40)
 18:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbp2y"]
-texture = ExtResource("3_hyqe6")
+texture = ExtResource("2_xwhmi")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 1:0/0 = 0
@@ -254,7 +136,7 @@ texture_region_size = Vector2i(40, 40)
 17:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hj6r4"]
-texture = ExtResource("4_7jetv")
+texture = ExtResource("3_6i06i")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 1:0/0 = 0
@@ -322,24 +204,7 @@ sources/0 = SubResource("TileSetAtlasSource_3hm6a")
 sources/1 = SubResource("TileSetAtlasSource_cbp2y")
 sources/2 = SubResource("TileSetAtlasSource_hj6r4")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0yya"]
-size = Vector2(25.75, 1348)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2f25"]
-size = Vector2(1966.75, 25)
-
-[node name="GameWorld" type="Node2D"]
-script = ExtResource("1_6308v")
-metadata/_edit_horizontal_guides_ = [73.0]
-
-[node name="Rocks" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_iav61")
-format = 2
-layer_0/name = "rocks"
-layer_0/z_index = 2
-layer_0/tile_data = PackedInt32Array(262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 196615, 1, 0, 327686, 1, 0, 196630, 131073, 0, 262167, 131073, 0, 262166, 131073, 0, 327702, 131073, 0, 1048590, 65537, 0, 1048591, 65537, 0, 1114125, 65537, 0)
-
-[node name="Ground" type="TileMap" parent="."]
+[node name="Ground" type="TileMap"]
 tile_set = SubResource("TileSet_unofg")
 format = 2
 layer_0/name = "ground"
@@ -347,28 +212,3 @@ layer_0/tile_data = PackedInt32Array(131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 3
 layer_1/name = "water"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(458760, 458754, 0, 458762, 524290, 0, 458761, 524290, 0, 458764, 524290, 0, 458763, 524290, 0, 458765, 524290, 0, 458766, 524290, 0, 524296, 458754, 1, 589832, 458754, 1, 655368, 458754, 2, 655369, 524290, 2, 655370, 524290, 2, 655371, 524290, 2, 655372, 524290, 2, 655373, 524290, 2, 655374, 589826, 2, 589838, 589826, 1, 524302, 720898, 1, 524303, 524290, 2, 524304, 589826, 2, 458768, 589826, 0, 458767, 524290, 0, 524297, 786434, 0, 589833, 786434, 2, 524301, 917506, 0, 589837, 917506, 2, 589836, 851970, 2, 589835, 851970, 2, 589834, 851970, 2, 524298, 851970, 0, 524299, 851970, 0, 524300, 851970, 0)
-
-[node name="Player" parent="." instance=ExtResource("6_rfpdh")]
-position = Vector2(590, 351)
-
-[node name="Bounds" type="StaticBody2D" parent="."]
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(-333, 291)
-shape = SubResource("RectangleShape2D_b0yya")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(1491, 305)
-shape = SubResource("RectangleShape2D_b0yya")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(590, -291)
-shape = SubResource("RectangleShape2D_x2f25")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
-position = Vector2(575, 932)
-shape = SubResource("RectangleShape2D_x2f25")
-
-[node name="Miner" parent="." instance=ExtResource("7_k0irq")]
-position = Vector2(759, 180)

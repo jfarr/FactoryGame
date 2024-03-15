@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://br5hr8wtyf5ug"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://fv6uajv82vpq"]
 
-[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_c1tgl"]
-[ext_resource type="Texture2D" uid="uid://b15dkf15qw0yk" path="res://assets/coal.png" id="2_mixi6"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_jfosd"]
+[ext_resource type="Texture2D" uid="uid://b37ghlpw1l1a0" path="res://assets/sprites/coal.png" id="2_n1hdq"]
 
 [resource]
-script = ExtResource("1_c1tgl")
+script = ExtResource("1_jfosd")
 name = "Coal"
-texture = ExtResource("2_mixi6")
+texture = ExtResource("2_n1hdq")

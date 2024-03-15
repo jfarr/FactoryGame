@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wsh2y1desliy"
-path="res://.godot/imported/mine3.png-78e33c89a295fe2dc7d3fb13bb3c0007.ctex"
+uid="uid://detli30qtexs3"
+path="res://.godot/imported/blue_circle.svg-50d48ca7a9a2b1f88e0c85935aafa930.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mine3.png"
-dest_files=["res://.godot/imported/mine3.png-78e33c89a295fe2dc7d3fb13bb3c0007.ctex"]
+source_file="res://assets/sprites/blue_circle.svg"
+dest_files=["res://.godot/imported/blue_circle.svg-50d48ca7a9a2b1f88e0c85935aafa930.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

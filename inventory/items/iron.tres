@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dr5ujpfpfnxbd"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dwkfu2ot4tj0n"]
 
-[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_brb0e"]
-[ext_resource type="Texture2D" uid="uid://bddkd2p6pxdf2" path="res://assets/iron.png" id="2_wwdxe"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_7h5sa"]
+[ext_resource type="Texture2D" uid="uid://7bayqr8xrptr" path="res://assets/sprites/iron.png" id="2_1s4us"]
 
 [resource]
-script = ExtResource("1_brb0e")
+script = ExtResource("1_7h5sa")
 name = "Iron"
-texture = ExtResource("2_wwdxe")
+texture = ExtResource("2_1s4us")

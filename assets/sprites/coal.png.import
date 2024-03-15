@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5wi7x0kr7ga4"
-path="res://.godot/imported/caves-rails-tileset-beta-1.0.png-d6816e9f21ac9c6ca96a8e2e95a9500c.ctex"
+uid="uid://b37ghlpw1l1a0"
+path="res://.godot/imported/coal.png-c6b902b8ba7f8f82cfd16993dcadf941.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/caves-rails-tileset-beta-1.0.png"
-dest_files=["res://.godot/imported/caves-rails-tileset-beta-1.0.png-d6816e9f21ac9c6ca96a8e2e95a9500c.ctex"]
+source_file="res://assets/sprites/coal.png"
+dest_files=["res://.godot/imported/coal.png-c6b902b8ba7f8f82cfd16993dcadf941.ctex"]
 
 [params]
 
