@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b38cktg1t1xde"]
+[gd_scene load_steps=8 format=3 uid="uid://b38cktg1t1xde"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_3ro63"]
 [ext_resource type="PackedScene" uid="uid://cj3dvhocjl1y8" path="res://scenes/miner.tscn" id="1_rnu7k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cih8ch0lirenf" path="res://inventory/player_inventory.tres" id="2_3ci5f"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="3_uwbwc"]
 [ext_resource type="PackedScene" uid="uid://bq5iet6c1kqyp" path="res://scenes/coal.tscn" id="4_b0u0b"]
+[ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3ro63")
@@ -27,10 +28,6 @@ position = Vector2(859, 287)
 [node name="Miner3" parent="." instance=ExtResource("1_rnu7k")]
 position = Vector2(799, 252)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(513, 355)
-script = ExtResource("3_uwbwc")
-
 [node name="Coal1" parent="." instance=ExtResource("4_b0u0b")]
 position = Vector2(219, 140)
 
@@ -39,3 +36,11 @@ position = Vector2(263, 141)
 
 [node name="Coal3" parent="." instance=ExtResource("4_b0u0b")]
 position = Vector2(263, 178)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(513, 355)
+script = ExtResource("3_uwbwc")
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="HUDLayer" instance=ExtResource("7_h3ysu")]

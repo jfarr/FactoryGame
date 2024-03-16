@@ -4,6 +4,7 @@ var draggable = false
 var initial_pos : Vector2
 var offset : Vector2
 var mined = {}
+@onready var inventory = get_tree().current_scene.player_inventory
 @onready var world = get_tree().current_scene
 
 func _ready():
@@ -40,7 +41,7 @@ func collect_resources():
 	for node in mined:
 		var item : InventoryItem = node.item
 		print("mining %s" % item)
-		world.add_inventory(item, item.collection_rate)
+		inventory.insert(item, item.collection_rate)
 
 func _on_clickable_area_mouse_entered():
 	if not global.is_dragging:
