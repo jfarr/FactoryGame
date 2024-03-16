@@ -20,9 +20,10 @@ func update(item : InventoryItem, selected : bool):
 func _on_check_box_toggled(toggled_on):
 	if toggled_on:
 		select_recipe()
-	else:
+	elif selected:
 		selected = false
-
+		recipe_selected.emit(null)
+ 
 func select_recipe():
 	selected = true
 	recipe_selected.emit(recipe)

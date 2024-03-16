@@ -23,8 +23,9 @@ func show_recipes(recipe_list : Array[Recipe]):
 	show()
 
 func recipe_selected(recipe):
-	print("selected: %s" % recipe)
+	#print("selected: %s" % recipe)
 	selected_recipe = recipe
-	for slot in $GridContainer.get_children():
-		if slot.recipe != recipe:
-			slot.deselect_recipe()
+	if recipe:
+		for slot in $GridContainer.get_children():
+			if slot.recipe != recipe:
+				slot.deselect_recipe()
