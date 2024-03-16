@@ -25,8 +25,15 @@ func is_terrain_clicked(terrain):
 	var clicked_cell = tile_map.local_to_map(tile_map.get_local_mouse_position())
 	return tile_map.get_cell_source_id(terrain, clicked_cell) != -1
 
-func add_inventory(item : InventoryItem, count : int = 1):
-	player_inventory.insert(item, count)
-	#print("inventory:")
-	#for slot in player_inventory.slots:
-		#print("%s: %s" % [slot.item.name, slot.amount])
+func collect_resources():
+	var mined = {}
+	for node in get_children():
+		if node.is_in_group("miner"):
+			mined.merge(node.mined)
+	for node in mined:
+		var item : InventoryItem = node.item
+		print("mining %s" % item)
+		player_inventory.insert(item, item.collection_rate)
+
+func _on_collection_timer_timeout():
+	collect_resources()

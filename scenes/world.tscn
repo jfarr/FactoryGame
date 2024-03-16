@@ -44,3 +44,9 @@ script = ExtResource("3_uwbwc")
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
 [node name="InventoryUI" parent="HUDLayer" instance=ExtResource("7_h3ysu")]
+
+[node name="CollectionTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="CollectionTimer" to="." method="_on_collection_timer_timeout"]
