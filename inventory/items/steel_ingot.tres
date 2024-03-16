@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bbgwembamyfet"]
+
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_sdooc"]
+[ext_resource type="Texture2D" uid="uid://bjv8oome26djv" path="res://assets/sprites/iron_ingot.png" id="2_fbh53"]
+
+[resource]
+script = ExtResource("1_sdooc")
+name = "Steel Ingot"
+texture = ExtResource("2_fbh53")
+collection_rate = 2

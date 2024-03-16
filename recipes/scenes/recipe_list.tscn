@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2r8546bvkcva"]
+
+[ext_resource type="Script" path="res://recipes/scenes/recipe_list.gd" id="1_bh30g"]
+
+[node name="RecipeList" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bh30g")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2

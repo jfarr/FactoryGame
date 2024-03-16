@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://blovqni3o422l"]
+
+[ext_resource type="Resource" uid="uid://c0avlwt47q5uh" path="res://inventory/items/iron_ingot.tres" id="1_27hxr"]
+[ext_resource type="Script" path="res://recipes/scripts/recipe.gd" id="1_28480"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_slot.gd" id="2_caynm"]
+[ext_resource type="Resource" uid="uid://fv6uajv82vpq" path="res://inventory/items/coal.tres" id="3_wofj2"]
+[ext_resource type="Resource" uid="uid://bbgwembamyfet" path="res://inventory/items/steel_ingot.tres" id="4_835eu"]
+
+[sub_resource type="Resource" id="Resource_8hmj6"]
+script = ExtResource("2_caynm")
+item = ExtResource("1_27hxr")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_p1jwf"]
+script = ExtResource("2_caynm")
+item = ExtResource("3_wofj2")
+amount = 2
+
+[sub_resource type="Resource" id="Resource_t73b7"]
+script = ExtResource("2_caynm")
+item = ExtResource("4_835eu")
+amount = 2
+
+[resource]
+script = ExtResource("1_28480")
+name = "Steel Ingot"
+machine = "Furnace"
+inputs = Array[ExtResource("2_caynm")]([SubResource("Resource_8hmj6"), SubResource("Resource_p1jwf")])
+output = SubResource("Resource_t73b7")
+byproducts = Array[ExtResource("2_caynm")]([])

@@ -15,14 +15,15 @@ func selection_changed(selected : Node):
 
 func _process(delta):
 	if recipe:
-		modulate = Color(1, 1, 1, 1)
+		$Sprite2D.modulate = Color(1, 1, 1, 1)
 	else:
-		modulate = Color(1, 0, 0, 0.8)
+		$Sprite2D.modulate = Color(1, 0, 0, 0.8)
 
 func _input(event):
 	#print(event)
 	if global.selection == self and event.is_action_pressed("recipe"):
-		print("open recipe list")
+		#print("open recipe list")
+		$RecipeList.show_recipes(recipe_list)
 
 	#if clickable and event is InputEventMouseButton and event.pressed and !event.double_click and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 		#print("clicked furnace")
@@ -37,6 +38,6 @@ func deselect():
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and !event.double_click and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
-		print("clicked furnace")
+		#print("clicked furnace")
 		select()
 
