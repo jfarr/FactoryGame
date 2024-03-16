@@ -7,7 +7,7 @@ var offset : Vector2
 var mined = {}
 var to_mine = {}
 var overlapping = 0
-@onready var inventory = get_tree().current_scene.player_inventory
+#@onready var inventory = get_tree().current_scene.player_inventory
 @onready var world = get_tree().current_scene
 
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b38cktg1t1xde"]
+[gd_scene load_steps=10 format=3 uid="uid://b38cktg1t1xde"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_3ro63"]
 [ext_resource type="PackedScene" uid="uid://cj3dvhocjl1y8" path="res://scenes/miner.tscn" id="1_rnu7k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5iet6c1kqyp" path="res://scenes/resources/coal.tscn" id="4_b0u0b"]
 [ext_resource type="PackedScene" uid="uid://bo4x1tutl6exm" path="res://scenes/resources/iron.tscn" id="6_6g4cr"]
 [ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
+[ext_resource type="PackedScene" uid="uid://beled36qrj1le" path="res://scenes/furnace.tscn" id="9_u68v2"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3ro63")
@@ -29,6 +30,12 @@ position = Vector2(859, 287)
 [node name="Miner3" parent="." instance=ExtResource("1_rnu7k")]
 position = Vector2(799, 252)
 
+[node name="Furnace1" parent="." instance=ExtResource("9_u68v2")]
+position = Vector2(499, 101)
+
+[node name="Furnace2" parent="." instance=ExtResource("9_u68v2")]
+position = Vector2(460, 101)
+
 [node name="Resources" type="Node" parent="."]
 
 [node name="Coal1" parent="Resources" instance=ExtResource("4_b0u0b")]
@@ -40,7 +47,7 @@ position = Vector2(263, 141)
 [node name="Coal3" parent="Resources" instance=ExtResource("4_b0u0b")]
 position = Vector2(263, 178)
 
-[node name="Iron" parent="Resources" instance=ExtResource("6_6g4cr")]
+[node name="Iron1" parent="Resources" instance=ExtResource("6_6g4cr")]
 position = Vector2(658, 101)
 
 [node name="Iron2" parent="Resources" instance=ExtResource("6_6g4cr")]

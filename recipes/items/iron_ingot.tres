@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://4uchdbcfu26f"]
+
+[ext_resource type="Resource" uid="uid://dwkfu2ot4tj0n" path="res://inventory/items/iron.tres" id="1_dicep"]
+[ext_resource type="Script" path="res://recipes/scripts/recipe.gd" id="1_grwqk"]
+[ext_resource type="Script" path="res://inventory/scripts/inventory_slot.gd" id="2_dd62u"]
+[ext_resource type="Resource" uid="uid://c0avlwt47q5uh" path="res://inventory/items/iron_ingot.tres" id="3_djlns"]
+
+[sub_resource type="Resource" id="Resource_gsiwy"]
+script = ExtResource("2_dd62u")
+item = ExtResource("1_dicep")
+amount = 4
+
+[sub_resource type="Resource" id="Resource_y2ns5"]
+script = ExtResource("2_dd62u")
+item = ExtResource("3_djlns")
+amount = 2
+
+[resource]
+script = ExtResource("1_grwqk")
+name = "Iron Ingot"
+machine = "Furnace"
+inputs = Array[ExtResource("2_dd62u")]([SubResource("Resource_gsiwy")])
+output = SubResource("Resource_y2ns5")
+byproducts = Array[ExtResource("2_dd62u")]([])
