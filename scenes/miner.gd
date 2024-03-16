@@ -1,9 +1,11 @@
 extends Node2D
 
 var draggable = false
+var droppable = false
 var initial_pos : Vector2
 var offset : Vector2
 var mined = {}
+var overlapping = 0
 @onready var inventory = get_tree().current_scene.player_inventory
 @onready var world = get_tree().current_scene
 
@@ -16,15 +18,18 @@ func _process(delta):
 			initial_pos = global_position
 			offset = get_global_mouse_position() - global_position
 			global.is_dragging = true 
+			droppable = true
+			overlapping = 0
 			select()
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
 			deselect()
-			if !world.is_terrain_clicked(world.ground):
+			if not droppable or not world.is_terrain_clicked(world.ground):
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
+				modulate = Color(1, 1, 1, 1)
 				return
 			if not Input.is_action_pressed("no_snap"):
 				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
@@ -65,3 +70,16 @@ func _on_collection_area_body_exited(body):
 
 func _on_collection_timer_timeout():
 	collect_resources()
+
+func _on_clickable_area_body_entered(body):
+	if global.is_dragging:
+		overlapping += 1
+		droppable = false
+		modulate = Color(1, 0, 0, 0.5)
+
+func _on_clickable_area_body_exited(body):
+	if global.is_dragging:
+		overlapping -= 1
+		if overlapping < 1:
+			droppable = true
+			modulate = Color(1, 1, 1, 1)
