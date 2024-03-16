@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo4x1tutl6exm"]
+
+[ext_resource type="Script" path="res://scenes/resources/iron.gd" id="1_t3g0e"]
+[ext_resource type="Resource" uid="uid://dwkfu2ot4tj0n" path="res://inventory/items/iron.tres" id="2_5pkov"]
+[ext_resource type="Texture2D" uid="uid://7bayqr8xrptr" path="res://assets/sprites/iron.png" id="2_yuimf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50p60"]
+
+[node name="Iron" type="StaticBody2D" groups=["mineral"]]
+script = ExtResource("1_t3g0e")
+item = ExtResource("2_5pkov")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yuimf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_50p60")

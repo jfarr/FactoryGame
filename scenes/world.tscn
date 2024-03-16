@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b38cktg1t1xde"]
+[gd_scene load_steps=9 format=3 uid="uid://b38cktg1t1xde"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_3ro63"]
 [ext_resource type="PackedScene" uid="uid://cj3dvhocjl1y8" path="res://scenes/miner.tscn" id="1_rnu7k"]
 [ext_resource type="PackedScene" uid="uid://be0vmb20ux268" path="res://scenes/ground.tscn" id="1_rqle1"]
 [ext_resource type="Resource" uid="uid://cih8ch0lirenf" path="res://inventory/player_inventory.tres" id="2_3ci5f"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="3_uwbwc"]
-[ext_resource type="PackedScene" uid="uid://bq5iet6c1kqyp" path="res://scenes/coal.tscn" id="4_b0u0b"]
+[ext_resource type="PackedScene" uid="uid://bq5iet6c1kqyp" path="res://scenes/resources/coal.tscn" id="4_b0u0b"]
+[ext_resource type="PackedScene" uid="uid://bo4x1tutl6exm" path="res://scenes/resources/iron.tscn" id="6_6g4cr"]
 [ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
 
 [node name="World" type="Node2D"]
@@ -28,14 +29,22 @@ position = Vector2(859, 287)
 [node name="Miner3" parent="." instance=ExtResource("1_rnu7k")]
 position = Vector2(799, 252)
 
-[node name="Coal1" parent="." instance=ExtResource("4_b0u0b")]
+[node name="Resources" type="Node" parent="."]
+
+[node name="Coal1" parent="Resources" instance=ExtResource("4_b0u0b")]
 position = Vector2(219, 140)
 
-[node name="Coal2" parent="." instance=ExtResource("4_b0u0b")]
+[node name="Coal2" parent="Resources" instance=ExtResource("4_b0u0b")]
 position = Vector2(263, 141)
 
-[node name="Coal3" parent="." instance=ExtResource("4_b0u0b")]
+[node name="Coal3" parent="Resources" instance=ExtResource("4_b0u0b")]
 position = Vector2(263, 178)
+
+[node name="Iron" parent="Resources" instance=ExtResource("6_6g4cr")]
+position = Vector2(658, 101)
+
+[node name="Iron2" parent="Resources" instance=ExtResource("6_6g4cr")]
+position = Vector2(700, 101)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(513, 355)
