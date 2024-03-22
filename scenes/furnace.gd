@@ -41,3 +41,9 @@ func _on_input_event(viewport, event, shape_idx):
 		#print("clicked furnace")
 		select()
 
+func _on_recipe_list_recipe_changed(new_recipe):
+	recipe = new_recipe
+
+func craft_recipe():
+	if recipe:
+		recipe.craft(world.player_inventory)

@@ -8,17 +8,18 @@
 radius = 102.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0hvh"]
-size = Vector2(32, 32)
+size = Vector2(27, 27)
 
 [node name="Miner" type="StaticBody2D" groups=["miner"]]
 z_index = 1
 script = ExtResource("1_u5gns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.3, 1.3)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("2_hsixg")
 
 [node name="CollectionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CollectionArea"]
 self_modulate = Color(1, 1, 1, 0.54902)
@@ -31,9 +32,11 @@ shape = SubResource("CircleShape2D_5nj3b")
 [node name="ClickableArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_t0hvh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_t0hvh")
 
 [connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

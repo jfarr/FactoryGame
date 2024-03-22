@@ -10,7 +10,7 @@ script = ExtResource("2_dd62u")
 item = ExtResource("1_dicep")
 amount = 4
 
-[sub_resource type="Resource" id="Resource_y2ns5"]
+[sub_resource type="Resource" id="Resource_leqtb"]
 script = ExtResource("2_dd62u")
 item = ExtResource("3_djlns")
 amount = 2
@@ -20,5 +20,4 @@ script = ExtResource("1_grwqk")
 name = "Iron Ingot"
 machine = "Furnace"
 inputs = Array[ExtResource("2_dd62u")]([SubResource("Resource_gsiwy")])
-output = SubResource("Resource_y2ns5")
-byproducts = Array[ExtResource("2_dd62u")]([])
+outputs = Array[ExtResource("2_dd62u")]([SubResource("Resource_leqtb")])

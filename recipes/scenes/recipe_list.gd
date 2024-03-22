@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal recipe_changed(recipe)
+
 var slot_scene : PackedScene = preload("res://recipes/scenes/recipe_slot.tscn")
 var selected_recipe = null
 
@@ -18,7 +20,7 @@ func show_recipes(recipe_list : Array[Recipe]):
 		for recipe in recipe_list:
 			var slot = slot_scene.instantiate()
 			slot.recipe_selected.connect(recipe_selected)
-			slot.update(recipe.output.item, recipe == selected_recipe)
+			slot.update(recipe, recipe == selected_recipe)
 			$GridContainer.add_child(slot)
 	show()
 
@@ -29,3 +31,4 @@ func recipe_selected(recipe):
 		for slot in $GridContainer.get_children():
 			if slot.recipe != recipe:
 				slot.deselect_recipe()
+	recipe_changed.emit(recipe)

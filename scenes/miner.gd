@@ -37,13 +37,16 @@ func _process(delta):
 				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
+				print("dropped at %s" % snapped)
 			mined = to_mine
 			to_mine = {}
 
 func select():
+	$Sprite2D.scale *= Vector2(1.1, 1.1)
 	$CollectionArea/Sprite2D.visible = true
 
 func deselect():
+	$Sprite2D.scale /= Vector2(1.1, 1.1)
 	$CollectionArea/Sprite2D.visible = false
 
 func _on_clickable_area_mouse_entered():
@@ -57,14 +60,14 @@ func _on_clickable_area_mouse_exited():
 func _on_collection_area_body_entered(body):
 	if body.is_in_group("mineral"):
 		to_mine[body] = 1
-		print("add minable")
-		print(to_mine)
+		#print("add minable")
+		#print(to_mine)
 
 func _on_collection_area_body_exited(body):
 	if body.is_in_group("mineral"):
 		to_mine.erase(body)
-		print("remove minable")
-		print(to_mine)
+		#print("remove minable")
+		#print(to_mine)
 
 func _on_clickable_area_body_entered(body):
 	if global.is_dragging:

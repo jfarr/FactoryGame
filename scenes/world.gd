@@ -32,8 +32,14 @@ func collect_resources():
 			mined.merge(node.mined)
 	for node in mined:
 		var item : InventoryItem = node.item
-		print("mining %s" % item)
+		#print("mining %s" % item)
 		player_inventory.insert(item, item.collection_rate)
 
+func craft_recipes():
+	for node in get_children():
+		if node.is_in_group("crafter"):
+			node.craft_recipe()
+
 func _on_collection_timer_timeout():
+	craft_recipes()
 	collect_resources()

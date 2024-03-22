@@ -17,4 +17,4 @@ amount = 0
 
 [resource]
 script = ExtResource("1_pold4")
-slots = Array[ExtResource("3_mmonv")]([SubResource("Resource_34g0m"), SubResource("Resource_abj1p"), null, null, null, null])
+slots = Array[ExtResource("3_mmonv")]([SubResource("Resource_34g0m"), SubResource("Resource_abj1p")])

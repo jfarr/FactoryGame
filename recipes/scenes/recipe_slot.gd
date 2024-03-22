@@ -2,7 +2,7 @@ extends Panel
 
 signal recipe_selected(recipe)
 
-var recipe
+var recipe : Recipe
 var selected = false
 
 func _ready():
@@ -11,10 +11,10 @@ func _ready():
 func _process(delta):
 	pass
 
-func update(item : InventoryItem, selected : bool):
+func update(item : Recipe, selected : bool):
 	recipe = item
-	$Sprite2D.texture = item.texture
-	$Label.text = item.name
+	$Sprite2D.texture = item.outputs[0].item.texture
+	$Label.text = item.outputs[0].item.name
 	$CheckBox.set_pressed(selected)
 
 func _on_check_box_toggled(toggled_on):

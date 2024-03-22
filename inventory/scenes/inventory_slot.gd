@@ -5,6 +5,8 @@ extends Panel
 
 func _ready():
 	item_visual.scale = Vector2(1, 1)
+	item_visual.visible = false
+	amount_text.visible = false
 
 func _process(delta):
 	pass

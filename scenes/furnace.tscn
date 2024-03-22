@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbe4l"]
 size = Vector2(27, 27)
 
-[node name="Furnace" type="StaticBody2D"]
+[node name="Furnace" type="StaticBody2D" groups=["crafter"]]
 input_pickable = true
 script = ExtResource("1_bdoaw")
 recipe_list = Array[Resource("res://recipes/scripts/recipe.gd")]([ExtResource("2_jnbvo"), ExtResource("3_enrtp")])
@@ -23,7 +23,9 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_bbe4l")
 
 [node name="RecipeList" parent="." instance=ExtResource("4_esy8t")]
+visible = false
 offset_right = 100.0
 offset_bottom = 32.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="recipe_changed" from="RecipeList" to="." method="_on_recipe_list_recipe_changed"]
