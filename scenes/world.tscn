@@ -36,12 +36,6 @@ position = Vector2(860, 300)
 visible = false
 position = Vector2(780, 260)
 
-[node name="Furnace1" parent="." instance=ExtResource("9_u68v2")]
-position = Vector2(499, 101)
-
-[node name="Furnace2" parent="." instance=ExtResource("9_u68v2")]
-position = Vector2(460, 101)
-
 [node name="Resources" type="Node" parent="."]
 
 [node name="Coal1" parent="Resources" instance=ExtResource("4_b0u0b")]
@@ -96,6 +90,12 @@ icon = ExtResource("11_cw88d")
 [node name="CollectionTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Furnace" parent="." instance=ExtResource("9_u68v2")]
+position = Vector2(493.227, 100.87)
+
+[node name="Furnace2" parent="." instance=ExtResource("9_u68v2")]
+position = Vector2(548, 100)
 
 [connection signal="button_down" from="HUDLayer/Panel/HBoxContainer/MinerButton" to="." method="_on_miner_button_button_down"]
 [connection signal="timeout" from="CollectionTimer" to="." method="_on_collection_timer_timeout"]

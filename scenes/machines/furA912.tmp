@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://beled36qrj1le"]
+[gd_scene load_steps=5 format=3 uid="uid://beled36qrj1le"]
 
 [ext_resource type="Script" path="res://scenes/machines/furnace.gd" id="1_bdoaw"]
 [ext_resource type="Texture2D" uid="uid://bkwsxd8hdhmfk" path="res://assets/sprites/furnace.png" id="1_xod1n"]
-[ext_resource type="Resource" uid="uid://4uchdbcfu26f" path="res://recipes/items/iron_ingot.tres" id="2_jnbvo"]
-[ext_resource type="Resource" uid="uid://blovqni3o422l" path="res://recipes/items/steel_ingot.tres" id="3_enrtp"]
 [ext_resource type="PackedScene" uid="uid://b2r8546bvkcva" path="res://recipes/scenes/recipe_list.tscn" id="4_esy8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbe4l"]
@@ -12,7 +10,6 @@ size = Vector2(27, 27)
 [node name="Furnace" type="StaticBody2D" node_paths=PackedStringArray("sprite", "clickable_area") groups=["crafter"]]
 input_pickable = true
 script = ExtResource("1_bdoaw")
-recipe_list = Array[Resource("res://recipes/scripts/recipe.gd")]([ExtResource("2_jnbvo"), ExtResource("3_enrtp")])
 sprite = NodePath("Sprite2D")
 clickable_area = NodePath("ClickableArea")
 
