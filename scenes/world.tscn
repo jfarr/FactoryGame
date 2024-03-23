@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bo4x1tutl6exm" path="res://scenes/resources/iron.tscn" id="6_6g4cr"]
 [ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
 [ext_resource type="PackedScene" uid="uid://beled36qrj1le" path="res://scenes/furnace.tscn" id="9_u68v2"]
-[ext_resource type="Texture2D" uid="uid://vvhkdst0nwnd" path="res://assets/sprites/miner.png" id="10_sn1w4"]
+[ext_resource type="Texture2D" uid="uid://b1uilpp6uvi1v" path="res://assets/sprites/miner40x40.png" id="10_coul6"]
 [ext_resource type="Texture2D" uid="uid://bkwsxd8hdhmfk" path="res://assets/sprites/furnace.png" id="11_cw88d"]
 
 [node name="World" type="Node2D"]
@@ -81,13 +81,15 @@ offset_bottom = 648.0
 [node name="HBoxContainer" type="HBoxContainer" parent="HUDLayer/Panel"]
 layout_mode = 0
 offset_right = 516.0
-offset_bottom = 51.0
+offset_bottom = 48.0
 
 [node name="MinerButton" type="Button" parent="HUDLayer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-icon = ExtResource("10_sn1w4")
+icon = ExtResource("10_coul6")
 
 [node name="FurnaceButton" type="Button" parent="HUDLayer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 icon = ExtResource("11_cw88d")
 

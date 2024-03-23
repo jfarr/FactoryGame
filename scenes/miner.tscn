@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj3dvhocjl1y8"]
 
 [ext_resource type="Script" path="res://scenes/miner.gd" id="1_u5gns"]
-[ext_resource type="Texture2D" uid="uid://vvhkdst0nwnd" path="res://assets/sprites/miner.png" id="2_hsixg"]
+[ext_resource type="Texture2D" uid="uid://b1uilpp6uvi1v" path="res://assets/sprites/miner40x40.png" id="2_6r2t2"]
 [ext_resource type="Texture2D" uid="uid://detli30qtexs3" path="res://assets/sprites/blue_circle.svg" id="3_7ukyo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5nj3b"]
@@ -15,8 +15,8 @@ z_index = 1
 script = ExtResource("1_u5gns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("2_hsixg")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_6r2t2")
 
 [node name="CollectionArea" type="Area2D" parent="."]
 visible = false

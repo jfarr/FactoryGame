@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+var creating = false
 var draggable = false
 var droppable = false
 var initial_pos : Vector2
@@ -33,6 +34,8 @@ func _process(delta):
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
 				modulate = Color(1, 1, 1, 1)
+				if creating:
+					queue_free()
 				return
 			if not Input.is_action_pressed("no_snap"):
 				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
@@ -41,9 +44,12 @@ func _process(delta):
 				print("dropped at %s" % snapped)
 			mined = to_mine
 			to_mine = {}
-			$Sprite2D.self_modulate = Color(1, 1, 1, 1)
+			if creating:
+				creating = false
+				$Sprite2D.self_modulate = Color(1, 1, 1, 1)
 
 func start_creating():
+	creating = true
 	$Sprite2D.self_modulate = Color(0, 1, 0, 1)
 
 func start_dragging():
