@@ -1,0 +1,12 @@
+- floating numbers (amount collected / crafted)
+- tech tree
+	- more storage
+- resources
+	- copper
+- recipes
+	- iron parts
+	- copper ingot
+	- wire
+	- steel beams
+	- steel parts
+	

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bo4x1tutl6exm" path="res://scenes/resources/iron.tscn" id="6_6g4cr"]
 [ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
 [ext_resource type="PackedScene" uid="uid://beled36qrj1le" path="res://scenes/machines/furnace.tscn" id="9_u68v2"]
-[ext_resource type="Texture2D" uid="uid://b1uilpp6uvi1v" path="res://assets/sprites/miner40x40.png" id="10_coul6"]
+[ext_resource type="Texture2D" uid="uid://cmq0bmlpldhvq" path="res://assets/sprites/miner40x40.png" id="10_coul6"]
 [ext_resource type="Texture2D" uid="uid://bkwsxd8hdhmfk" path="res://assets/sprites/furnace.png" id="11_cw88d"]
 
 [node name="World" type="Node2D"]
@@ -24,18 +24,6 @@ layer_1/tile_data = PackedInt32Array(524297, 786434, 0, 589833, 786434, 2, 52430
 layer_2/name = "shoreline"
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(655368, 458754, 2, 655374, 589826, 2, 524304, 589826, 2, 458760, 458754, 0, 458768, 589826, 0, 458761, 524290, 0, 458762, 524290, 0, 458763, 524290, 0, 458764, 524290, 0, 458765, 524290, 0, 458766, 524290, 0, 458767, 524290, 0, 655369, 524290, 2, 655370, 524290, 2, 655371, 524290, 2, 655372, 524290, 2, 655373, 524290, 2, 589838, 589826, 1, 589832, 458754, 1, 524296, 458754, 1, 524303, 524290, 2, 524302, 720898, 1)
-
-[node name="Miner1" parent="." instance=ExtResource("1_rnu7k")]
-visible = false
-position = Vector2(780, 340)
-
-[node name="Miner2" parent="." instance=ExtResource("1_rnu7k")]
-visible = false
-position = Vector2(860, 300)
-
-[node name="Miner3" parent="." instance=ExtResource("1_rnu7k")]
-visible = false
-position = Vector2(780, 260)
 
 [node name="Resources" type="Node" parent="."]
 
