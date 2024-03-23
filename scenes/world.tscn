@@ -15,6 +15,7 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_3ro63")
 miner_scene = ExtResource("1_rnu7k")
+furnace_scene = ExtResource("9_u68v2")
 player_inventory = ExtResource("2_3ci5f")
 
 [node name="Ground" parent="." instance=ExtResource("1_rqle1")]
@@ -91,11 +92,6 @@ icon = ExtResource("11_cw88d")
 wait_time = 2.0
 autostart = true
 
-[node name="Furnace" parent="." instance=ExtResource("9_u68v2")]
-position = Vector2(493.227, 100.87)
-
-[node name="Furnace2" parent="." instance=ExtResource("9_u68v2")]
-position = Vector2(548, 100)
-
 [connection signal="button_down" from="HUDLayer/Panel/HBoxContainer/MinerButton" to="." method="_on_miner_button_button_down"]
+[connection signal="button_down" from="HUDLayer/Panel/HBoxContainer/FurnaceButton" to="." method="_on_furnace_button_button_down"]
 [connection signal="timeout" from="CollectionTimer" to="." method="_on_collection_timer_timeout"]

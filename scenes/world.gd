@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var miner_scene : PackedScene
+@export var furnace_scene : PackedScene
 
 enum {
 	ground = 0,
@@ -52,3 +53,12 @@ func _on_miner_button_button_down():
 	miner.global_position = get_global_mouse_position()
 	miner.start_dragging()
 	miner.start_creating()
+
+func _on_furnace_button_button_down():
+	create_machine(furnace_scene)
+
+func create_machine(scene : PackedScene):
+	var machine : Machine = scene.instantiate()
+	add_child(machine)
+	machine.global_position = get_global_mouse_position()
+	machine.start_creating()

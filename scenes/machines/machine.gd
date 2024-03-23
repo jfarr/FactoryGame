@@ -3,7 +3,7 @@ class_name Machine extends StaticBody2D
 @export var sprite : Sprite2D
 @export var clickable_area : Area2D
 
-#var creating = false
+var creating = false
 var draggable = false
 var droppable = false
 var initial_pos : Vector2
@@ -35,8 +35,8 @@ func _process(delta):
 				tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
 				modulate = Color(1, 1, 1, 1)
 				z_index -= 1
-				#if creating:
-					#queue_free()
+				if creating:
+					queue_free()
 				return
 			if not Input.is_action_pressed("no_snap"):
 				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
@@ -44,16 +44,16 @@ func _process(delta):
 				tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
 				z_index -= 1
 				print("dropped at %s" % snapped)
-			#if creating:
-				#creating = false
-				#sprite.self_modulate = Color(1, 1, 1, 1)
+			if creating:
+				creating = false
+				sprite.self_modulate = Color(1, 1, 1, 1)
 
-#func start_creating():
-	#creating = true
-	#sprite.self_modulate = Color(0, 1, 0, 1)
-	#draggable = true
-	#start_dragging()
-#
+func start_creating():
+	sprite.self_modulate = Color(0, 1, 0, 1)
+	creating = true
+	draggable = true
+	start_dragging()
+
 func start_dragging():
 	initial_pos = global_position
 	offset = get_global_mouse_position() - global_position
