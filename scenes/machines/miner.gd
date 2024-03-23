@@ -8,7 +8,7 @@ var offset : Vector2
 var mined = {}
 var to_mine = {}
 var overlapping = 0
-#@onready var inventory = get_tree().current_scene.player_inventory
+
 @onready var world = get_tree().current_scene
 
 func _ready():
@@ -18,13 +18,6 @@ func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
 			start_dragging()
-			#initial_pos = global_position
-			#offset = get_global_mouse_position() - global_position
-			#global.is_dragging = true 
-			#droppable = true
-			#overlapping = 0
-			#to_mine = {}
-			#select()
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
@@ -64,11 +57,11 @@ func start_dragging():
 
 func select():
 	$Sprite2D.scale *= Vector2(1.1, 1.1)
-	$CollectionArea/Sprite2D.visible = true
+	$CollectionArea.visible = true
 
 func deselect():
 	$Sprite2D.scale /= Vector2(1.1, 1.1)
-	$CollectionArea/Sprite2D.visible = false
+	$CollectionArea.visible = false
 
 func _on_clickable_area_mouse_entered():
 	if not global.is_dragging:

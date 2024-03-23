@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj3dvhocjl1y8"]
 
-[ext_resource type="Script" path="res://scenes/miner.gd" id="1_u5gns"]
+[ext_resource type="Script" path="res://scenes/machines/miner.gd" id="1_u5gns"]
 [ext_resource type="Texture2D" uid="uid://b1uilpp6uvi1v" path="res://assets/sprites/miner40x40.png" id="2_6r2t2"]
 [ext_resource type="Texture2D" uid="uid://detli30qtexs3" path="res://assets/sprites/blue_circle.svg" id="3_7ukyo"]
 
@@ -33,10 +33,6 @@ shape = SubResource("CircleShape2D_5nj3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea"]
 position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_t0hvh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_t0hvh")
 
 [connection signal="body_entered" from="CollectionArea" to="." method="_on_collection_area_body_entered"]

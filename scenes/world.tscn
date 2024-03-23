@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://b38cktg1t1xde"]
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_3ro63"]
-[ext_resource type="PackedScene" uid="uid://cj3dvhocjl1y8" path="res://scenes/miner.tscn" id="1_rnu7k"]
+[ext_resource type="PackedScene" uid="uid://cj3dvhocjl1y8" path="res://scenes/machines/miner.tscn" id="1_rnu7k"]
 [ext_resource type="PackedScene" uid="uid://be0vmb20ux268" path="res://scenes/ground.tscn" id="1_rqle1"]
 [ext_resource type="Resource" uid="uid://cih8ch0lirenf" path="res://inventory/player_inventory.tres" id="2_3ci5f"]
 [ext_resource type="Script" path="res://scenes/Camera2D.gd" id="3_uwbwc"]
 [ext_resource type="PackedScene" uid="uid://bq5iet6c1kqyp" path="res://scenes/resources/coal.tscn" id="4_b0u0b"]
 [ext_resource type="PackedScene" uid="uid://bo4x1tutl6exm" path="res://scenes/resources/iron.tscn" id="6_6g4cr"]
 [ext_resource type="PackedScene" uid="uid://dbg4dd7d3y7ni" path="res://inventory/scenes/inventory_ui.tscn" id="7_h3ysu"]
-[ext_resource type="PackedScene" uid="uid://beled36qrj1le" path="res://scenes/furnace.tscn" id="9_u68v2"]
+[ext_resource type="PackedScene" uid="uid://beled36qrj1le" path="res://scenes/machines/furnace.tscn" id="9_u68v2"]
 [ext_resource type="Texture2D" uid="uid://b1uilpp6uvi1v" path="res://assets/sprites/miner40x40.png" id="10_coul6"]
 [ext_resource type="Texture2D" uid="uid://bkwsxd8hdhmfk" path="res://assets/sprites/furnace.png" id="11_cw88d"]
 
