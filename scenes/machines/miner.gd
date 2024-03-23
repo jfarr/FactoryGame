@@ -86,7 +86,7 @@ func _on_collection_area_body_exited(body):
 func _on_clickable_area_body_entered(body):
 	if global.is_dragging and body != self:
 		overlapping += 1
-		print("overlapping: %s" % body)
+		#print("overlapping: %s" % body)
 		droppable = false
 		modulate = Color(1, 0, 0, 0.5)
 

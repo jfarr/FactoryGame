@@ -18,8 +18,8 @@ func _ready():
 	assert(clickable_area)
 	clickable_area.mouse_entered.connect(_on_clickable_area_mouse_entered)
 	clickable_area.mouse_exited.connect(_on_clickable_area_mouse_exited)
-	#clickable_area.body_entered.connect(_on_clickable_area_body_entered)
-	#clickable_area.body_exited.connect(_on_clickable_area_body_exited)
+	clickable_area.body_entered.connect(_on_clickable_area_body_entered)
+	clickable_area.body_exited.connect(_on_clickable_area_body_exited)
 	#global.selection_changed.connect(_on_selection_changed)
 	initial_scale = sprite.scale
 	#deselect()
@@ -42,6 +42,7 @@ func _process(delta):
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
 				modulate = Color(1, 1, 1, 1)
+				z_index -= 1
 				#if creating:
 					#queue_free()
 				return
@@ -49,6 +50,7 @@ func _process(delta):
 				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
 				var tween = get_tree().create_tween()
 				tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
+				z_index -= 1
 				print("dropped at %s" % snapped)
 			#if creating:
 				#creating = false
@@ -70,6 +72,7 @@ func start_dragging():
 	global.is_dragging = true 
 	droppable = true
 	overlapping = 0
+	z_index += 1
 	##select()
 
 #func select():
@@ -86,30 +89,31 @@ func start_dragging():
 		##$CollectionArea.visible = false
 #
 func _on_clickable_area_mouse_entered():
-	print("mouse enter")
+	#print("mouse enter")
 	if not global.is_dragging:
 		sprite.scale *= Vector2(1.1, 1.1)
 		draggable = true
 
 func _on_clickable_area_mouse_exited():
-	print("mouse exit")
+	#print("mouse exit")
 	sprite.scale = initial_scale
 	if not global.is_dragging:
 		draggable = false
-#
-#func _on_clickable_area_body_entered(body):
-	#if global.is_dragging and body != self:
-		#overlapping += 1
-		#droppable = false
-		#modulate = Color(1, 0, 0, 0.5)
-#
-#func _on_clickable_area_body_exited(body):
-	#if global.is_dragging and body != self:
-		#overlapping -= 1
-		#if overlapping < 1:
-			#droppable = true
-			#modulate = Color(1, 1, 1, 1)
-#
+
+func _on_clickable_area_body_entered(body):
+	#print("overlap")
+	if global.is_dragging and body != self:
+		overlapping += 1
+		droppable = false
+		modulate = Color(1, 0, 0, 0.5)
+
+func _on_clickable_area_body_exited(body):
+	if global.is_dragging and body != self:
+		overlapping -= 1
+		if overlapping < 1:
+			droppable = true
+			modulate = Color(1, 1, 1, 1)
+
 #func _on_selection_changed(selected : Node):
 	#if selected != self:
 		#deselect()
