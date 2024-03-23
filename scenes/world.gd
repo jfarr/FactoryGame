@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var miner_scene : PackedScene
+
 enum {
 	ground = 0,
 	water = 1,
@@ -43,3 +45,20 @@ func craft_recipes():
 func _on_collection_timer_timeout():
 	craft_recipes()
 	collect_resources()
+
+#func _on_miner_button_pressed():
+	#var miner = miner_scene.instantiate()
+	#print("adding miner %s" % miner)
+	#add_child(miner)
+	#miner.global_position = get_global_mouse_position() + Vector2(20, -20)
+	#miner.start_dragging()
+	#miner.start_creating()
+
+
+func _on_miner_button_button_down():
+	var miner = miner_scene.instantiate()
+	print("adding miner %s" % miner)
+	add_child(miner)
+	miner.global_position = get_global_mouse_position()
+	miner.start_dragging()
+	miner.start_creating()

@@ -16,13 +16,14 @@ func _ready():
 func _process(delta):
 	if draggable:
 		if Input.is_action_just_pressed("click"):
-			initial_pos = global_position
-			offset = get_global_mouse_position() - global_position
-			global.is_dragging = true 
-			droppable = true
-			overlapping = 0
-			to_mine = {}
-			select()
+			start_dragging()
+			#initial_pos = global_position
+			#offset = get_global_mouse_position() - global_position
+			#global.is_dragging = true 
+			#droppable = true
+			#overlapping = 0
+			#to_mine = {}
+			#select()
 		if Input.is_action_pressed("click"):
 			global_position = get_global_mouse_position() - offset
 		elif Input.is_action_just_released("click"):
@@ -40,6 +41,20 @@ func _process(delta):
 				print("dropped at %s" % snapped)
 			mined = to_mine
 			to_mine = {}
+			$Sprite2D.self_modulate = Color(1, 1, 1, 1)
+
+func start_creating():
+	$Sprite2D.self_modulate = Color(0, 1, 0, 1)
+
+func start_dragging():
+	initial_pos = global_position
+	offset = get_global_mouse_position() - global_position
+	global.is_dragging = true 
+	draggable = true
+	droppable = true
+	overlapping = 0
+	to_mine = {}
+	select()
 
 func select():
 	$Sprite2D.scale *= Vector2(1.1, 1.1)
@@ -70,13 +85,14 @@ func _on_collection_area_body_exited(body):
 		#print(to_mine)
 
 func _on_clickable_area_body_entered(body):
-	if global.is_dragging:
+	if global.is_dragging and body != self:
 		overlapping += 1
+		print("overlapping: %s" % body)
 		droppable = false
 		modulate = Color(1, 0, 0, 0.5)
 
 func _on_clickable_area_body_exited(body):
-	if global.is_dragging:
+	if global.is_dragging and body != self:
 		overlapping -= 1
 		if overlapping < 1:
 			droppable = true
