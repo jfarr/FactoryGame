@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	if recipe:
 		$Sprite2D.modulate = Color(1, 1, 1, 1)
-	else:
+	elif not creating:
 		$Sprite2D.modulate = Color(1, 0, 0, 0.8)
 	if draggable and Input.is_action_just_pressed("recipe"):
 		$RecipeList.show_recipes(recipe_list)
