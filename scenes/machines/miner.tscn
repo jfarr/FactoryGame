@@ -10,8 +10,10 @@ radius = 102.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0hvh"]
 size = Vector2(27, 27)
 
-[node name="Miner" type="StaticBody2D" groups=["miner"]]
+[node name="Miner" type="StaticBody2D" node_paths=PackedStringArray("sprite", "clickable_area") groups=["miner"]]
 script = ExtResource("1_u5gns")
+sprite = NodePath("Sprite2D")
+clickable_area = NodePath("ClickableArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)

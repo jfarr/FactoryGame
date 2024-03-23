@@ -31,22 +31,25 @@ func _process(delta):
 		elif Input.is_action_just_released("click"):
 			global.is_dragging = false
 			if not droppable or not world.is_terrain_clicked(world.ground):
-				var tween = get_tree().create_tween()
-				tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
-				modulate = Color(1, 1, 1, 1)
-				z_index -= 1
-				if creating:
-					queue_free()
-				return
-			if not Input.is_action_pressed("no_snap"):
-				var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
-				var tween = get_tree().create_tween()
-				tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
-				z_index -= 1
-				print("dropped at %s" % snapped)
-			if creating:
-				creating = false
-				sprite.self_modulate = Color(1, 1, 1, 1)
+				cancel_drag()
+				#var tween = get_tree().create_tween()
+				#tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
+				#modulate = Color(1, 1, 1, 1)
+				#z_index -= 1
+				#if creating:
+					#queue_free()
+				#return
+			else:
+				finish_dragging()
+			#if not Input.is_action_pressed("no_snap"):
+				#var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
+				#var tween = get_tree().create_tween()
+				#tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
+				#z_index -= 1
+				#print("dropped at %s" % snapped)
+			#if creating:
+				#creating = false
+				#sprite.self_modulate = Color(1, 1, 1, 1)
 
 func start_creating():
 	sprite.self_modulate = Color(0, 1, 0, 1)
@@ -55,12 +58,33 @@ func start_creating():
 	start_dragging()
 
 func start_dragging():
-	initial_pos = global_position
-	offset = get_global_mouse_position() - global_position
-	global.is_dragging = true 
-	droppable = true
-	overlapping = 0
-	z_index += 1
+	if not global.is_dragging:
+		#print("got here")
+		initial_pos = global_position
+		offset = get_global_mouse_position() - global_position
+		global.is_dragging = true 
+		droppable = true
+		overlapping = 0
+		z_index += 1
+
+func cancel_drag():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", initial_pos, 0.1).set_ease(Tween.EASE_OUT)
+	modulate = Color(1, 1, 1, 1)
+	z_index -= 1
+	if creating:
+		queue_free()
+
+func finish_dragging():
+	if not Input.is_action_pressed("no_snap"):
+		var snapped = Vector2(int(global_position.x) / 40 * 40 + 20, int(global_position.y) / 40 * 40 + 20)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "position", snapped, 0.1).set_ease(Tween.EASE_OUT)
+		z_index -= 1
+		print("dropped at %s" % snapped)
+	if creating:
+		creating = false
+		sprite.self_modulate = Color(1, 1, 1, 1)
 
 func _on_clickable_area_mouse_entered():
 	if not global.is_dragging:
